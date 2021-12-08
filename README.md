@@ -11,3 +11,5 @@ streamlit==0.84.0
 ![Alt text](https://github.com/wjw136/image2latexv2/blob/master/out/math.png)
 ### physic
 ![Alt text](https://github.com/wjw136/image2latexv2/blob/master/out/physic.png)
+## 参考项目
+https://github.com/kingyiusuen/image-to-latex

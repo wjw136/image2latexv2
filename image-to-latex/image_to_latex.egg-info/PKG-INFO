@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: image-to-latex
+Version: 0.1
+Summary: Convert images to latex code.
+Home-page: https://github.com/kingyiusuen/image-to-latex/
+Author: King Yiu Suen
+Author-email: kingyiusuen@gmail.com
+License: MIT
+Keywords: machine-learning,deep-learning,artificial-intelligence,latex,neural-network
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Provides-Extra: dev
+License-File: LICENSE
+
+UNKNOWN
+

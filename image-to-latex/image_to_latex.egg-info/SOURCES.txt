@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+image_to_latex.egg-info/PKG-INFO
+image_to_latex.egg-info/SOURCES.txt
+image_to_latex.egg-info/dependency_links.txt
+image_to_latex.egg-info/requires.txt
+image_to_latex.egg-info/top_level.txt

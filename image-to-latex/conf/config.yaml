@@ -1,0 +1,58 @@
+seed: 1234
+
+trainer:
+  gpus: [0]
+  overfit_batches: 0.0 #只用1%的训练集训练以及验证和测试 整数batch 百分之几test集合
+  # val_check_interval: 0.2
+  check_val_every_n_epoch: 2
+  fast_dev_run: false #dev集合代替train
+  max_epochs: 20
+  min_epochs: 20
+  num_sanity_val_steps: 0 #它会在正式training开始前先做若干个batches的validation
+  auto_lr_find: false
+  checkpoint_callback: true
+  auto_select_gpus: false
+
+callbacks:
+  model_checkpoint:
+    save_top_k: 1
+    save_weights_only: false
+    verbose: 2
+    mode: "min" #min监控monitor的趋势
+    monitor: "val_loss"
+    filename: "{epoch}-{val_loss:.2f}-{val_edit_distance:.2f}-{val_exact_match:.2f}"
+    dirpath: "/data/zzengae/jwwang/final_project/test1/"
+  early_stopping:
+    patience: 3
+    mode: "min"
+    monitor: "val_loss"
+    min_delta: 0.001
+
+
+data:
+  batch_size: 8
+  num_workers: 6
+  pin_memory: false
+
+lit_model:
+  # Optimizer
+  # 学习率 权重衰减 动量更新
+  # 动量更新 维护每一次梯度下降的势能方向 若连续两次方向相同 加速收敛
+  # 权重衰减 在损失函数中，weight decay是放在正则项（regularization）前面的一个系数，正则项一般指示模型的复杂度，所以weight decay的作用是调节模型复杂度对损失函数的影响，若weight decay很大，则复杂的模型损失函数的值也就大。
+  lr: 0.001
+  weight_decay: 0.0001
+  # Scheduler
+  # 动态调整学习率的scheduler
+  milestones: [10]
+  gamma: 0.5
+  # Model
+  d_model: 128
+  dim_feedforward: 256
+  nhead: 4
+  dropout: 0.3
+  num_decoder_layers: 3 
+  max_output_len: 200 #position encoding的max len(pe的长度)
+
+logger:
+  project: "image-to-latex"
+  # name: run的命名
